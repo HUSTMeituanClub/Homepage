@@ -1,0 +1,24 @@
+sudo: required
+dist: trusty
+language: python
+python:
+- '3.5'
+env:
+  global:
+    secure: j2FNA9MHbY/BdiwlVO+mIamEuPbPmk65AZcgFfLtqNTeQ4nM+CK4yOTqCPwrGRLSgrRPiFPQ0/btOxYCQgZ9hxD4FFK54maTP/Iqxf3nIwN1lZwCM95ckbap7VjcaAzG8x3E2cqqZS4tYj/yGF8wgconO0fCsiPGOyjI3sDqDoalFxO7p74xHu6cLpE171bWtnPnvHoEmCZSPLM78K/1NVqFfuGfnAF0HoZI5wW+Pq4TvbtZGFHry67T6SiobfAIkL7oz8J2RapJ+xWF2UvzNpDLEQuiLtkcR+Gj9rgvwzX1gg7Dss2blmS+mev3E4axI76yFiZ5eIxTRZOTZH1/SHL8BM1O/Ajz9wG0jRedIF6ebvgvcKwd+9Pr7D23K4YHdzFXDpsvp8XMNk2KKSMGoHbdMMBLRKMUBzemey4BrxJb8ha5Du4QWMD2q5IWdF+BauSEqXt5+ZhezS0HvXeYasD78BieRZZzIcA3vFMjaRdxZUyllCETVwHLcSoNyldmNSneThrcscxm0RM79JsUrQCctbMyWxYXLXuOWve4S+f567KBOtDT5L9Ln6uW10Zetv6R9nchavB6XkyLUZHdVl0DNzf94fjgOTdi183xNVD9/TFJvwk2fhR3zjaK0PZNMAhyQwpQhWXDC+d7MXmTuGcMkC9TPeNTAG9TIWNtf68=
+install:
+- sudo pip install pelican jinja2 markdown
+script:
+- git config --global user.email "$GIT_EMAIL"
+- git config --global user.name "$GIT_NAME"
+- git config --global push.default simple
+- git clone --depth=1 https://github.com/HustMeituanBot/pelican-clean-blog theme
+- git clone --depth=1 https://$GH_TOKEN@github.com/HUSTMeituanClub/HUSTMeituanClub.github.io
+  _output
+- make publish
+after_success:
+- cd _output
+- rsync -a --delete --delete-after --exclude '.git' ../output/ ./
+- git add -A .
+- git commit -m "Update from travis"
+- git push --quiet
