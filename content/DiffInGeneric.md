@@ -26,15 +26,14 @@ Java 1.5中引入了泛型的概念以增加代码的安全性与清晰度，同
 
 下面看一段代码：
 
-```java
-public class DiffInGeneric {
-    public static void main(String[] args) {
-        List<String> strings = new ArrayList<>();
-        List list = strings;//ok
-        List<Object> objects = strings;//Error: java: incompatible types: java.util.List<java.lang.String> cannot be converted to java.util.List<java.lang.Object>
+    #!java
+    public class DiffInGeneric {
+        public static void main(String[] args) {
+            List<String> strings = new ArrayList<>();
+            List list = strings;//ok
+            List<Object> objects = strings;//Error: java: incompatible types: java.util.List<java.lang.String> cannot be converted to java.util.List<java.lang.Object>
+        }
     }
-}
-```
 
 我们创建了一个`List<String>`类型的对象`strings`，再把它赋给原生态类型`List`，这是可以的。但是第5行中尝试把它传递给`List<Object>`时，出现了一个类型不相容错误，注意，这是一个编译期错误。
 
@@ -44,46 +43,41 @@ public class DiffInGeneric {
 
 如果像上面那样使用原生态类型会有什么隐患呢？看下面一段代码：
 
-```java
-public class DiffInGeneric {
-    public static void main(String[] args) {
-        List<String> strings = new ArrayList<>();
-        unsafeAdd(strings, (Integer)1);
-        System.out.println(strings.get(0));
-    }
+    #!java
+    public class DiffInGeneric {
+        public static void main(String[] args) {
+            List<String> strings = new ArrayList<>();
+            unsafeAdd(strings, (Integer)1);
+            System.out.println(strings.get(0));
+        }
 
-    private static void unsafeAdd(List list, Object object) {
-        list.add(object);
+        private static void unsafeAdd(List list, Object object) {
+            list.add(object);
+        }
     }
-}
-```
 
 编译器提示了两条警告：
 
 第8行：
 
-```java
-warning: [rawtypes] found raw type: List
+    #!shell
+    warning: [rawtypes] found raw type: List
     private static void unsafeAdd(List list, Object object) {
                                   ^
-  missing type arguments for generic class List<E>
-  where E is a type-variable:
-    E extends Object declared in interface List
-
-```
+    missing type arguments for generic class List<E>
+    where E is a type-variable:
+        E extends Object declared in interface List
 
 警告发现了原生态类型`List`，同时还贴心地指出了`List<E>`的形式以及`E`的来源。
 
 第9行：
 
-```java
-warning: [unchecked] unchecked call to add(E) as a member of the raw type List
-        list.add(object);
-                ^
-  where E is a type-variable:
-    E extends Object declared in interface List
-
-```
+    #!shell
+    warning: [unchecked] unchecked call to add(E) as a member of the raw type List
+            list.add(object);
+                    ^
+     where E is a type-variable:
+        E extends Object declared in interface List
 
 同样指出了我们正在把一个对象添加到`List`中，而这个添加过程由于我们使用了原生态类型而无法被检验。
 
@@ -91,9 +85,8 @@ warning: [unchecked] unchecked call to add(E) as a member of the raw type List
 
 第5行： 
 
-```java
-Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
-```
+    #!java
+    Exception in thread "main" java.lang.ClassCastException: java.lang.Integer cannot be cast to java.lang.String
 
 我们试图把一个自动装箱后的`Integer`对象插入到了一个被声明为`List<String>`的`List`中，由于我们在`unsafeAdd`方法中使用了原生态类型，从而使得编译器无法在编译期间检查`add`参数的合法性，从而没有产生编译错误而是产生了一条警告，运行后当试图把这个错误的`Integer`对象作为`String`取出时就会出现`ClassCaseException`异常，这是个运行时的异常，导致了程序中断。
 
@@ -105,61 +98,54 @@ Exception in thread "main" java.lang.ClassCastException: java.lang.Integer canno
 
 但是`List<?>`还是不能用作上面的`unsafeAdd`的参数，修改后会出现一条奇怪的编译错误：
 
-```java
-error: no suitable method found for add(Object)
-        list.add(object);
+    #!shell
+    error: no suitable method found for add(Object)
+            list.add(object);
             ^
     method Collection.add(CAP#1) is not applicable
       (argument mismatch; Object cannot be converted to CAP#1)
     method List.add(CAP#1) is not applicable
       (argument mismatch; Object cannot be converted to CAP#1)
-  where CAP#1 is a fresh type-variable:
-    CAP#1 extends Object from capture of ?
-
-```
+    where CAP#1 is a fresh type-variable:
+        CAP#1 extends Object from capture of ?
 
 这是因为无法将任何元素（`null`除外）放入`List<?>`中。这又是为什么呢？先来看一个有限定通配符的例子：
 
-```JAVA
-public class DiffInGeneric {
-    public static void main(String[] args) {
-        List<? extends Number> numbers = new ArrayList<Integer>();
-        numbers= new ArrayList<Double>();
-        numbers= new ArrayList<Float>();
-        numbers = new ArrayList<Number>();
-        numbers.add(new Integer(1));
+    #!java
+    public class DiffInGeneric {
+        public static void main(String[] args) {
+            List<? extends Number> numbers = new ArrayList<Integer>();
+            numbers= new ArrayList<Double>();
+            numbers= new ArrayList<Float>();
+            numbers = new ArrayList<Number>();
+            numbers.add(new Integer(1));
+        }
     }
-}
-```
 
 第7行报出了与之前相似的编译错误：
 
-```java
-error: no suitable method found for add(Integer)
+    #!shell
+    error: no suitable method found for add(Integer)
         numbers.add(new Integer(1));
                ^
     method Collection.add(CAP#1) is not applicable
       (argument mismatch; Integer cannot be converted to CAP#1)
     method List.add(CAP#1) is not applicable
       (argument mismatch; Integer cannot be converted to CAP#1)
-  where CAP#1 is a fresh type-variable:
-    CAP#1 extends Number from capture of ? extends Number
-
-```
+    where CAP#1 is a fresh type-variable:
+        CAP#1 extends Number from capture of ? extends Number
 
 这次我们可以看出错误的原因：可以将一个`List<Integer>`传递给`List<? extends Number>`，因为`Integer`是`Number`的子类，符合限定符的条件。同理，也可以将类似的对象传递给它，当然也可以把`List<Number>`传递给它。
 
 如果允许这个对象的`add`操作，我们无法知道这个参数是否与对象的泛型参数相同，因为我们只知道它是`Number`的一个子类。
 
-```java
-List<? extends Parent> list = new ArrayList<Child>();
-List<? extends Parent> parents = list;
-list.add(new Parent());
-```
+    #!java
+    List<? extends Parent> list = new ArrayList<Child>();
+    List<? extends Parent> parents = list;
+    list.add(new Parent());
 
 上面的1,2两行是完全合法的，如果允许第3行的`add`操作，那么会把一个`Parent`对象加入到一个实际类型是`Child`的`List`中，而`Parent`is-not-a `Child`，这破坏了Java的类型安全，是绝对不允许的。
 
 上面是有限制通配符的情况，那么针对`List<?>`这样的无限制通配符更是如此。因此，为了保证类型安全，不允许对`List<?>`或`List<? extends E>`这样的通配符类型进行类似`add`的操作。
 
 使用泛型方法可以避免这个问题（重申通配符类型并不是泛型方法），使用无限制通配符类型可以取代其他需要表示**包含某一种对象类型的泛型类型**的情况而不是使用原生态类型`List`。
-
