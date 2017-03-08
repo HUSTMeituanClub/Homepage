@@ -1,5 +1,5 @@
 Title: Java泛型中List、List<Object>、List<?>的区别
-Date: 2017-02-14 16:30:22
+Date: 2017-02-14 16:30
 Tags: Java
 Authors: Di Wu
 Categories: Java
