@@ -1,11 +1,7 @@
----
-title: Java泛型中List、List<Object>、List<?>的区别
-date: 2017-02-14 16:30:22
-tags:
-  - Java
-categories:
-  - Java
----
+Title: Java泛型中List、List<Object>、List<?>的区别
+Date: 2017-02-14 16:30:22
+tags: Java
+categories: Java
 
 Java 1.5中引入了泛型的概念以增加代码的安全性与清晰度，同时为了提供对旧代码的兼容性，让旧代码不经过改动也可以在新版本中运行，Java提供了原生态类型（或称原始类型）。但是实际中在新的代码中已经不应该使用原生态类型。
 
