@@ -28,7 +28,7 @@ AUTHOR_FEED_RSS = None
 
 THEME = 'theme'
 HEADER_COVER = '/images/bg.jpg'
-HEADER_COLOR = 'white'
+HEADER_COLOR = 'black'
 SOCIAL = (('github', 'https://github.com/HUSTMeituanClub'),
           ('envelope', 'mailto:@hustmeituan.club'))
 
@@ -54,3 +54,4 @@ DEFAULT_PAGINATION = 10
 RELATIVE_URLS = True
 
 DISPLAY_PAGES_ON_MENU = True
+DISPLAY_CATEGORIES_ON_MENU = True
