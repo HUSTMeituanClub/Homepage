@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'HustMeituanBot'
 SITENAME = '美团点评技术俱乐部'
-SITE_DESCRIPTION = '华中科技大学'
+SITESUBTITLE = '华中科技大学'
 SITEURL = '//HUSTMeituanClub.github.io'
 
 PATH = 'content'
@@ -54,3 +54,4 @@ RELATIVE_URLS = True
 
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
+MENUITEMS = [('关于', pages/about.html)]
