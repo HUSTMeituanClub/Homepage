@@ -33,7 +33,6 @@ SOCIAL = (('github', 'https://github.com/HUSTMeituanClub'),
           ('envelope', 'mailto:@hustmeituan.club'))
 
 STATIC_PATHS = ['static',
-                'pages',
                 'images',
                 'extra/favicon.ico',
                 'static/CNAME']
