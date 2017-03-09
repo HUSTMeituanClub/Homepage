@@ -58,4 +58,4 @@ DISPLAY_CATEGORIES_ON_MENU = False
 PAGE_URL = 'pages/{slug}'
 PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
-MENUITEMS = [('关于', /pages/about/index.html)]
+MENUITEMS = [('关于', '/pages/about/index.html')]
