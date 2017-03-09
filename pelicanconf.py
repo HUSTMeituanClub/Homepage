@@ -54,4 +54,4 @@ RELATIVE_URLS = True
 
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
-MENUITEMS = [('关于', pages/about.html)]
+MENUITEMS = [('关于', content/pages/about.md)]
