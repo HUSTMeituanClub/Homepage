@@ -1,4 +1,4 @@
-Title: Java泛型中`List`、`List&lt;Object&gt;`、`List&lt;?&gt;`的区别
+Title: Java泛型中List、List&#60;Object&#62;、List&#60;?&#62;的区别
 Date: 2017-02-14 16:30
 Tags: Java
 Authors: Di Wu
