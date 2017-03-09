@@ -28,7 +28,7 @@ AUTHOR_FEED_RSS = None
 
 THEME = 'theme'
 HEADER_COVER = '/images/bg.jpg'
-HEADER_COLOR = 'black'
+HEADER_COLOR = 'white'
 SOCIAL = (('github', 'https://github.com/HUSTMeituanClub'),
           ('envelope', 'mailto:@hustmeituan.club'))
 
