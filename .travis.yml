@@ -12,7 +12,7 @@ script:
 - git config --global user.email "$GIT_EMAIL"
 - git config --global user.name "$GIT_NAME"
 - git config --global push.default simple
-- git clone --depth=1 https://github.com/HustMeituanBot/pelican-clean-blog theme
+- git clone --depth=1 https://github.com/AlexanderInHUST/pelican-elegant.git theme
 - git clone --depth=1 https://$GH_TOKEN@github.com/HUSTMeituanClub/HUSTMeituanClub.github.io
   _output
 - make publish
