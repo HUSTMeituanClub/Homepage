@@ -54,4 +54,8 @@ RELATIVE_URLS = True
 
 DISPLAY_PAGES_ON_MENU = True
 DISPLAY_CATEGORIES_ON_MENU = False
-MENUITEMS = [('关于', content/pages/about.md)]
+
+PAGE_URL = 'pages/{slug}'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
+
+MENUITEMS = [('关于', /pages/about/index.html)]
