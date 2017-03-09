@@ -5,7 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'HustMeituanBot'
 SITENAME = '美团点评技术俱乐部'
 SITESUBTITLE = '华中科技大学'
-SITEURL = '//HUSTMeituanClub.github.io'
+SITEURL = '/pages/about/index.html'
 
 PATH = 'content'
 
@@ -27,7 +27,7 @@ AUTHOR_FEED_RSS = None
 
 
 THEME = 'theme'
-DEFAULT_HEADER_IMAGE = '/images/bg.jpg'
+HEADER_COVER = '/images/bg.jpg'
 SOCIAL = (('github', 'https://github.com/HUSTMeituanClub'),
           ('envelope', 'mailto:@hustmeituan.club'))
 
