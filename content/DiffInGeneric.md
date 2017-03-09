@@ -31,7 +31,8 @@ Java 1.5中引入了泛型的概念以增加代码的安全性与清晰度，同
         public static void main(String[] args) {
             List<String> strings = new ArrayList<>();
             List list = strings;//ok
-            List<Object> objects = strings;//Error: java: incompatible types: java.util.List<java.lang.String> cannot be converted to java.util.List<java.lang.Object>
+            List<Object> objects = strings;
+            //Error: java: incompatible types: java.util.List<java.lang.String> cannot be converted to java.util.List<java.lang.Object>
         }
     }
 
