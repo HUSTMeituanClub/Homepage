@@ -6,9 +6,6 @@ AUTHOR = 'HustMeituanBot'
 SITENAME = '美团点评技术俱乐部'
 SITESUBTITLE = '华中科技大学'
 SITEURL = '//HUSTMeituanClub.github.io'
-SITELOGO = 'images/logo.png'
-FAVICON = 'images/logo.png'
-SITELOGO_SIZE = 14
 
 PATH = 'content'
 
@@ -38,11 +35,12 @@ SOCIAL = (('github', 'https://github.com/HUSTMeituanClub'),
 STATIC_PATHS = ['static',
                 'pages',
                 'images',
+                'extra/favicon.ico',
                 'static/CNAME']
 
 EXTRA_PATH_METADATA = {
     'static/CNAME': {'path': 'CNAME'},
-    'images/favicon.ico':{'path':'favicon.ico'}
+    'extra/favicon.ico': {'path': 'favicon.ico'}
 }
 
 MD_EXTENSIONS = [
