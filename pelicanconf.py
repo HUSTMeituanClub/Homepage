@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = 'HustMeituanBot'
 SITENAME = '美团点评技术俱乐部'
-SITESUBTITLE = '华中科技大学'
+SITE_DESCRIPTION = '华中科技大学'
 SITEURL = '//HUSTMeituanClub.github.io'
 
 PATH = 'content'

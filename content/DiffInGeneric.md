@@ -1,10 +1,12 @@
-Title: Java泛型中`List`、`List<Object>`、`List<?>`的区别
+Title: Java泛型中`List`、`List&lt;Object&gt;`、`List&lt;?&gt;`的区别
 Date: 2017-02-14 16:30
 Tags: Java
 Authors: Di Wu
 Categories: Java
 
 Java 1.5中引入了泛型的概念以增加代码的安全性与清晰度，同时为了提供对旧代码的兼容性，让旧代码不经过改动也可以在新版本中运行，Java提供了原生态类型（或称原始类型）。但是实际中在新的代码中已经不应该使用原生态类型。
+
+<!--more-->
 
 原生态类型的含义是不带任何实际参数的泛型名称，例如Java 1.5后改为泛型实现的`List<E>`，`List`就是它的原生态类型，与没有引入泛型之前的类型完全一致。
 
