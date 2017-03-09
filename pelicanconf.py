@@ -42,6 +42,7 @@ STATIC_PATHS = ['static',
 
 EXTRA_PATH_METADATA = {
     'static/CNAME': {'path': 'CNAME'},
+    'images/favicon.ico':{'path':'favicon.ico'}
 }
 
 MD_EXTENSIONS = [
