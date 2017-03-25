@@ -25,6 +25,11 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# 友链
+LINKS = [
+    ('朋友A的博客', 'http://a.blog.com'),
+    ('朋友B的博客', 'http://b.blog.com'),
+]
 
 THEME = 'theme'
 HEADER_COVER = '/images/bg.jpg'
