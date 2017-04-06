@@ -1,4 +1,3 @@
-
 Title: Android PropertyAnimation 属性动画（一）初探
 Date: 2017-03-10 14:14:45
 Categories: Android, UI
