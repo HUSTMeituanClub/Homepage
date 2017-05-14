@@ -64,7 +64,8 @@ target/
 Session.vim
 .netrwhist
 *~
-.DS_Store
+
+/.DS_Store
 
 drafts/
 output/
