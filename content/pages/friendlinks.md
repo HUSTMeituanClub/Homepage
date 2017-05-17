@@ -65,5 +65,5 @@ padding:20px;
 </div>
 
 <div style="margin:0 auto;">
-<img src="/images/groupimg/1.jpg" style="width:520px;height:400px;" alt="合照">
+<img src="http://ojvrmnpos.bkt.clouddn.com/groupimg.jpg" style="width:520px;height:400px;" alt="合照">
 </div>
