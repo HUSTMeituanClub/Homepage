@@ -1,6 +1,6 @@
 Title: Android View绘制之measure过程
 Date: 2017-03-10 18:30:16
-Categories: Android
+Category: Android
 Tags: Android, View
 Authors: Di Wu
 

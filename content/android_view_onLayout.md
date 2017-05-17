@@ -1,6 +1,6 @@
 Title: Android View绘制之layout过程
 Date: 2017-03-12 14:02:47
-Categories: Android
+Category: Android
 Tags: Android, View
 Authors: Di Wu
 

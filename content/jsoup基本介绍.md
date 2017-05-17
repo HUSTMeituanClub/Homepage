@@ -2,7 +2,7 @@ Title: jsoup基本应用介绍
 Date: 2017-04-20 8:22
 Tags: Jsoup
 Authors: Zijie Han
-Categories: Java
+Category: Java
 
 
 前些时间要做一个v2ex的第三方客户端，偶然发现了一个爬虫神器jsoup.运用jsoup对网站进行爬虫非常容易，仅需几行代码即可完成对整个网站的爬虫。

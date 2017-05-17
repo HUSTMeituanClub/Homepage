@@ -1,6 +1,6 @@
 Title: Android利用UDP、TCP进行局域网数据传输
 Date: 2017-05-11 15:58:06
-Categories: Android
+Category: Android
 Tags: Android, Network
 Authors: Di Wu
 

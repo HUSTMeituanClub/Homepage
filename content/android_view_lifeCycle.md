@@ -1,6 +1,6 @@
 Title: Android View绘制生命周期总览
 Date: 2017-03-09 17:22:41
-Categories: Android
+Category: Android
 Tags: Android, View, LifeCycle
 Authors: Di Wu
 

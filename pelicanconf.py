@@ -4,8 +4,9 @@ from __future__ import unicode_literals
 
 AUTHOR = 'HustMeituanBot'
 SITENAME = '美团点评技术俱乐部'
-SITESUBTITLE = '华中科技大学'
-SITEURL = '/pages/about/index.html'
+#SITEURL = '/pages/about/index.html'
+
+THEME = 'pelican-themes/pelican-clean-blog'
 
 PATH = 'content'
 
@@ -15,7 +16,7 @@ LOCALE = 'zh_CN.UTF-8'
 
 DATE_FORMATS = {
     'en': (('en_US', 'utf8'), '%a %Y-%b-%d'),
-    'zh': (('zh_CN', 'utf8'), '%Y年%b%d日 周%a'),
+    'zh': (('zh_CN', 'utf8'), '%Y年%b月%d日 周%a'),
 }
 
 # Feed generation is usually not desired when developing
@@ -25,13 +26,13 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
-# 友链
-LINKS = [
-    ('朋友A的博客', 'http://a.blog.com'),
-    ('朋友B的博客', 'http://b.blog.com'),
-]
+# Blogroll
+LINKS = (('Pelican', 'http://getpelican.com/'),
+         ('Python.org', 'http://python.org/'),
+         ('Jinja2', 'http://jinja.pocoo.org/'),
+         ('You can modify those links in your config file', '#'),)
 
-THEME = 'theme'
+# Social widget
 HEADER_COVER = '/images/bg.jpg'
 SOCIAL = (('github', 'https://github.com/HUSTMeituanClub'),
           ('envelope', 'mailto:@hustmeituan.club'))
@@ -41,10 +42,15 @@ STATIC_PATHS = ['static',
                 'extra/favicon.ico',
                 'static/CNAME']
 
+
+DEFAULT_PAGINATION = 10
 EXTRA_PATH_METADATA = {
     'static/CNAME': {'path': 'CNAME'},
     'extra/favicon.ico': {'path': 'favicon.ico'}
 }
+
+PAGE_URL = 'pages/{slug}'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
 MD_EXTENSIONS = [
     'admonition',
@@ -52,15 +58,18 @@ MD_EXTENSIONS = [
     'codehilite(css_class=highlight)',
     'extra',
 ]
-
-DEFAULT_PAGINATION = 10
+# Uncomment following line if you want document-relative URLs when developing
+#RELATIVE_URLS = True
 
 RELATIVE_URLS = True
 
 DISPLAY_PAGES_ON_MENU = True
-DISPLAY_CATEGORIES_ON_MENU = False
 
-PAGE_URL = 'pages/{slug}'
-PAGE_SAVE_AS = 'pages/{slug}/index.html'
 
-MENUITEMS = [('关于', '/pages/about/index.html')]
+MENUITEMS = [('分类', '/categories.html'),
+             ('归档','/archives.html'),
+             ('作者','/authors.html'),
+             ('标签','/tags.html'),
+             
+             ]
+
