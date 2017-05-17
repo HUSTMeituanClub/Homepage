@@ -16,7 +16,7 @@ LOCALE = 'zh_CN.UTF-8'
 
 DATE_FORMATS = {
     'en': (('en_US', 'utf8'), '%a %Y-%b-%d'),
-    'zh': (('zh_CN', 'utf8'), '%Y年%b月%d日 周%a'),
+    'zh': (('zh_CN', 'utf8'), '%Y年%b%d日 周%a'),
 }
 
 # Feed generation is usually not desired when developing

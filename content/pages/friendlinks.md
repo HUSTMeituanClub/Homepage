@@ -59,6 +59,9 @@ padding:20px;
 <div class="perpic">
 <a href="http://blog.duskdragon.com" style="display: inline;"><img src="/images/avatar/duskdragonpic.jpg" style="width: 100px;height: 100px;border-radius: 20px;"alt="个人照片"></a><p>duskdragon<p>
 </div>
+<div class="perpic">
+<a href="http://lrghust.cn" style="display: inline;"><img src="/images/avatar/Ruiglipic.jpg" style="width: 100px;height: 100px;border-radius: 20px;"alt="个人照片"></a><p>Ruigli<p>
+</div>
 </div>
 
 <div style="margin:0 auto;">
