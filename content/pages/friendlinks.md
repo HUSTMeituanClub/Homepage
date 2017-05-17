@@ -6,9 +6,9 @@ authors: petnakanojo
 
 #### 这是**华中科技大学**美团点评技术俱乐部（简称“华科美团俱乐部”）小伙伴们的个人网站
 
-#### 这里是一群有趣的人
+这里是一群有趣的人
 
-#### 欢迎视奸，欢迎技术交流～
+欢迎视奸，欢迎技术交流～
 
 
 
@@ -57,16 +57,10 @@ padding:20px;
 <a href="http://www.kurokoi.moe" style="display: inline;"><img src="/images/avatar/korokoipic.jpg" style="width: 100px;height: 100px;border-radius: 20px;"alt="个人照片"></a><p>kurokoi<p>
 </div>
 <div class="perpic">
-<a href="http://blog.duskdragon.com" style="display: inline;"><img src="/images/avatar/duskdragonpic.jpg" style="width: 100px;height: 100px;border-radius: 20px;"alt="个人照片"></a><p>petnakanojo<p>
+<a href="http://blog.duskdragon.com" style="display: inline;"><img src="/images/avatar/duskdragonpic.jpg" style="width: 100px;height: 100px;border-radius: 20px;"alt="个人照片"></a><p>duskdragon<p>
 </div>
 </div>
 
-### 华科美团俱乐部联系方式
-* GitHub: [HUSTMeituanClub](https://github.com/HUSTMeituanClub)
-
-### 关于美团点评技术俱乐部
-美团点评技术俱乐部旨在建立一个培养技术人才的平台，将最新的核心技术带到校园，为同学们提供一些需要的学习资料等资源，并定期开展活动，给予俱乐部成员与企业工程师交流学习以及实践实习的机会。
-
-<div style="margin:0 auto;width:200px;height:200px;">
-<img alt='qrcode meituantech' src='/images/qrcode_meituantech.jpg'></img>
+<div style="margin:0 auto;">
+<img src="/images/groupimg/1.jpg" style="width:520px;height:400px;" alt="合照">
 </div>
