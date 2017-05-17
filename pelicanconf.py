@@ -6,7 +6,7 @@ AUTHOR = 'HustMeituanBot'
 SITENAME = '美团点评技术俱乐部'
 #SITEURL = '/pages/about/index.html'
 
-THEME = 'pelican-themes/pelican-clean-blog'
+THEME = 'theme'
 
 PATH = 'content'
 
