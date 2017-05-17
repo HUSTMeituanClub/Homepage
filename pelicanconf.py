@@ -70,6 +70,8 @@ MENUITEMS = [('分类', '/categories.html'),
              ('归档','/archives.html'),
              ('作者','/authors.html'),
              ('标签','/tags.html'),
+             ('关于', '/pages/about/index.html'),
+             ('友链', '/pages/friendlinks/index.html'),
              
              ]
 
