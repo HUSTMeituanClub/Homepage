@@ -1,7 +1,7 @@
 Title: Android PropertyAnimation 属性动画（二）弹跳小球实例
 Date: 2017-04-02 10:08:31
 Category: Android
-Tags: Android, UI, Animation
+Tags: android, UI, animation
 Authors: Di Wu
 
 ## 前言

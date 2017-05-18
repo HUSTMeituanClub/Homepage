@@ -1,7 +1,7 @@
 Title: 神威·太湖之光初体验
 Date: 2017/4/6 16:05:24
-Category: supercomputer
-Tags: Contest, Parallelization
+Category: 超算
+Tags: contest, parallelization
 Authors: Yifeng Tang
 
 

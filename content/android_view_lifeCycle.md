@@ -1,7 +1,7 @@
 Title: Android View绘制生命周期总览
 Date: 2017-03-09 17:22:41
 Category: Android
-Tags: Android, View, LifeCycle
+Tags: android, view, lifeCycle
 Authors: Di Wu
 
 为了直观表示整个过程，我制作了一张流程图。注意以下只是整个生命周期中比较常用的方法，并不代表所有的过程。
