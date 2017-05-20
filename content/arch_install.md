@@ -1,4 +1,4 @@
-Title: 用官方Wiki的方式安装ArchLinux
+Title: 以官方Wiki的方式安装ArchLinux
 Date: 2017-05-17 23:26:29
 Category: Linux
 Tags: arch, linux 
@@ -586,4 +586,4 @@ reboot
 
 虽然系统安装好了，但是还没有进行基本配置和安装图形界面，所以接下来我们要进行一些必须的配置和图形界面的安装。
 
-请见下一篇文章。
+请见下一篇文章[ArchLinux安装后的必须配置与图形界面安装教程](http://www.viseator.com/2017/05/19/arch_setup/)。
