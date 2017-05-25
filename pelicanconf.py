@@ -3,7 +3,7 @@
 from __future__ import unicode_literals
 
 AUTHOR = 'HustMeituanBot'
-SITENAME = '美团点评技术俱乐部'
+SITENAME = '华科美团点评技术俱乐部'
 #SITEURL = '/pages/about/index.html'
 
 THEME = 'theme'
