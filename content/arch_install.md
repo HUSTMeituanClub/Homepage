@@ -36,11 +36,11 @@ Authors: Di Wu
 
 2.  *   如果是`Linux`系统下制作安装介质，推荐使用`dd`命令，教程：
 
-        >   http://blog.topspeedsnail.com/archives/404
+>   http://blog.topspeedsnail.com/archives/404
 
-    *   如果是`windows`系统下制作安装介质，推荐使用`usbwriter`这款轻量级的工具，下载链接：
+*   如果是`windows`系统下制作安装介质，推荐使用`usbwriter`这款轻量级的工具，下载链接：
 
-        >   https://sourceforge.net/projects/usbwriter/
+>   https://sourceforge.net/projects/usbwriter/
 
 #### 磁盘准备
 
@@ -48,17 +48,17 @@ Authors: Di Wu
 
 *   在`windows`下空出一块分区来安装：利用`windows`自带的磁盘管理工具就可以：
 
-    1.  右击`windows`图标，在弹出菜单中选择磁盘管理（其他版本的`windows`请自行找到打开磁盘管理的方式）：
+1.  右击`windows`图标，在弹出菜单中选择磁盘管理（其他版本的`windows`请自行找到打开磁盘管理的方式）：
 
-        ![](/images/arch01.jpeg)
+![](/images/arch01.jpeg)
 
-    2.  右击想要删除的分区，选择删除卷（注意这步之后这个分区的所有数据将会丢失）：
+2.  右击想要删除的分区，选择删除卷（注意这步之后这个分区的所有数据将会丢失）：
 
-        ![](/images/arch02.jpeg)
+![](/images/arch02.jpeg)
 
 *   在`linux`下分出一块区域安装：使用`fdisk`进行，教程请见链接中的删除分区：
 
-    >   http://www.liusuping.com/ubuntu-linux/linux-fdisk-disk.html
+>   http://www.liusuping.com/ubuntu-linux/linux-fdisk-disk.html
 
 *   空闲的磁盘（新磁盘）：不需要进行任何操作。
 
@@ -80,25 +80,25 @@ Authors: Di Wu
 
 1.  按上一步设置好启动顺序，启动之后会看到如下界面：
 
-    ![](/images/arch03.jpeg)
+![](/images/arch03.jpeg)
 
-    如果直接进入`windows`，请检查启动顺序是否设置成功，U盘是否在制作启动介质时成功写入。
+如果直接进入`windows`，请检查启动顺序是否设置成功，U盘是否在制作启动介质时成功写入。
 
-    如果没有看到这个界面，请检查U盘是否制作成功，如果多次遇到问题可以考虑换一个U盘。
+如果没有看到这个界面，请检查U盘是否制作成功，如果多次遇到问题可以考虑换一个U盘。
 
-    选择第一个选项。
+选择第一个选项。
 
 2.  这时`Arch`开始加载，你将会看到屏幕显示如下内容：
 
-    ![](/images/arch04.jpeg)
+![](/images/arch04.jpeg)
 
-    加载完成后你将会进入一个有命令提示符的界面：
+加载完成后你将会进入一个有命令提示符的界面：
 
-    ![](/images/arch05.jpeg)
+![](/images/arch05.jpeg)
 
-    如果出现`FAIL`或是其他错误信息导致无法启动请自行搜索错误信息来获得解决方法。
+如果出现`FAIL`或是其他错误信息导致无法启动请自行搜索错误信息来获得解决方法。
 
-    这就是`Linux`的终端界面了，接下来我们将通过在这个界面执行一系列命令来将`Arch`安装到我们的磁盘上。
+这就是`Linux`的终端界面了，接下来我们将通过在这个界面执行一系列命令来将`Arch`安装到我们的磁盘上。
 
 ---
 
@@ -146,27 +146,27 @@ ls: cannot access '/sys/firmware/efi/efivars': No such file or directory
 
 *   如果你是有线网并且路由器支持DHCP的话插上网线后应该已经是联网状态了，可以执行以下命令来进行判断：
 
-    ```bash
-    ping www.baidu.com
-    ```
+```bash
+ping www.baidu.com
+```
 
-    如果可以看到类似下面的内容就说明连上了网络：
+如果可以看到类似下面的内容就说明连上了网络：
 
-    ![](/images/arch05.jpg)
+![](/images/arch05.jpg)
 
-    >   再次提示用快捷键Ctrl-C可以终止当前正在执行的命令
+>   再次提示用快捷键Ctrl-C可以终止当前正在执行的命令
 
 *   如果你是无线网，请执行以下命令：
 
-    ```bash
-    wifi-menu
-    ```
+```bash
+wifi-menu
+```
 
-    这是一个实用的命令行下联网工具，有字符形式的图形化界面，利用它可以方便地联网，如果它没能起作用，需要进入以下页面查找解决方式：
+这是一个实用的命令行下联网工具，有字符形式的图形化界面，利用它可以方便地联网，如果它没能起作用，需要进入以下页面查找解决方式：
 
-    >   https://wiki.archlinux.org/index.php/Wireless_network_configuration
+>   https://wiki.archlinux.org/index.php/Wireless_network_configuration
 
-    连接以后同样可以通过上面的`ping`命令来进行测试。
+连接以后同样可以通过上面的`ping`命令来进行测试。
 
 #### 更新系统时间
 
@@ -228,9 +228,9 @@ fdisk /dev/sdx （请将sdx替换成你要操作的磁盘如sdb sdc等）
 
 6.  输入以下命令来格式化刚刚创建的引导分区：
 
-    ```bash
-    mkfs.fat -F32 /dev/sdxY （请将的sdxY替换为刚创建的分区）
-    ```
+```bash
+mkfs.fat -F32 /dev/sdxY （请将的sdxY替换为刚创建的分区）
+```
 
 现在引导分区就创建好了。
 
@@ -252,9 +252,9 @@ fdisk /dev/sdx （请将sdx替换成你要操作的磁盘如sdb sdc等）
 
 5.  输入以下命令来格式化刚刚创建的根分区：
 
-    ```bash
-    mkfs.ext4 /dev/sdxY （请将的sdxY替换为刚创建的分区）
-    ```
+```bash
+mkfs.ext4 /dev/sdxY （请将的sdxY替换为刚创建的分区）
+```
 
 这是我的分区过程供参考：
 
@@ -276,7 +276,7 @@ mount /dev/sdxY /mnt （请将sdxY替换为之前创建的根分区）
 
 ```bash
 mkdir /mnt/boot
-mkdir /dev/sdxY /mnt/boot （请将sdxY替换为之前创建或是已经存在的引导分区）
+mount /dev/sdxY /mnt/boot （请将sdxY替换为之前创建或是已经存在的引导分区）
 ```
 
 ---
@@ -507,9 +507,9 @@ pacman -S intel-ucode
 
 *   首先安装`os-prober`这个包，它可以配合`Grub`检测已经存在的系统，自动设置启动选项。
 
-    ```bash
-    pacman -S os-prober
-    ```
+```bash
+pacman -S os-prober
+```
 
 ---
 
@@ -517,23 +517,23 @@ pacman -S intel-ucode
 
 *   安装`grub`包：
 
-    ```bash
-    pacman -S grub
-    ```
+```bash
+pacman -S grub
+```
 
 *   部署`grub`：
 
-    ```bash
-    grub-install --target=i386-pc /dev/sdx （将sdx换成你安装的硬盘）
-    ```
+```bash
+grub-install --target=i386-pc /dev/sdx （将sdx换成你安装的硬盘）
+```
 
-    注意这里的`sdx`应该为硬盘（例如`/dev/sda`），**而不是**形如`/dev/sda1`这样的分区。
+注意这里的`sdx`应该为硬盘（例如`/dev/sda`），**而不是**形如`/dev/sda1`这样的分区。
 
 *   生成配置文件：
 
-    ```bash
-    grub-mkconfig -o /boot/grub/grub.cfg
-    ```
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 ![](/images/arch18.jpg)
 
@@ -545,21 +545,21 @@ pacman -S intel-ucode
 
 *   安装`grub`与`efibootmgr`两个包：
 
-    ```bash
-    pacman -S grub efibootmgr
-    ```
+```bash
+pacman -S grub efibootmgr
+```
 
 *   部署`grub`：
 
-    ```bash
-    grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
-    ```
+```bash
+grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
+```
 
 *   生成配置文件：
 
-    ```bash
-    grub-mkconfig -o /boot/grub/grub.cfg
-    ```
+```bash
+grub-mkconfig -o /boot/grub/grub.cfg
+```
 
 **提示信息应与上面的图类似，如果你发现错误，请仔细检查是否正确完成上面的过程。**
 
@@ -586,4 +586,4 @@ reboot
 
 虽然系统安装好了，但是还没有进行基本配置和安装图形界面，所以接下来我们要进行一些必须的配置和图形界面的安装。
 
-请见下一篇文章[ArchLinux安装后的必须配置与图形界面安装教程](http://www.viseator.com/2017/05/19/arch_setup/)。
+请见下一篇文章：[ArchLinux安装后的必须配置与图形界面安装教程](http://www.hustmeituan.club/archlinuxan-zhuang-hou-de-bi-xu-pei-zhi-yu-tu-xing-jie-mian-an-zhuang-jiao-cheng.html)。
