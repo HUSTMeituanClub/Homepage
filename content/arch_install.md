@@ -4,6 +4,7 @@ Category: Linux
 Tags: arch, linux 
 Authors: Di Wu
 
+
 ## 写在前面
 
 >   **这可能是你能找到的最适合你的中文`ArchLinux`安装教程。**
@@ -513,7 +514,7 @@ pacman -S os-prober
 
 ---
 
-**如果为BIOS/MBR引导方式：**
+##### **如果为BIOS/MBR引导方式：**
 
 *   安装`grub`包：
 
@@ -541,7 +542,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ---
 
-**如果为EFI/GPT引导方式：**
+##### **如果为EFI/GPT引导方式：**
 
 *   安装`grub`与`efibootmgr`两个包：
 
@@ -565,6 +566,32 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ---
 
+##### 安装后检查
+
+**如果你是多系统，请注意上面一节中对`os-prober`这个包的安装。**
+
+**强烈建议使用如下命令检查是否成功生成各系统的入口，如果没有正常生成会出现开机没有系统入口的情况：**
+
+```bash
+vim /boot/grub/grub.cfg
+```
+
+检查接近末尾的`menuentry`部分是否有`windows`或其他系统名入口。下图例子中是`Arch Linux`入口与检测到的`windows10`入口（安装在`/dev/sda1`），具体情况可能有不同：
+
+![](/images/arch22.jpg)
+
+**如果你没有看到系统入口或者该文件不存在**，请检查上一小节内容并重新生成配置文件。
+
+**如果你已经安装`os-prober`包并生成配置文件后还是没有生成其他系统的入口**，请参照：
+
+>   [https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks#Combining_the_use_of_UUIDs_and_basic_scripting](https://wiki.archlinux.org/index.php/GRUB/Tips_and_tricks#Combining_the_use_of_UUIDs_and_basic_scripting) 
+
+编辑配置文件手动添加引导的分区入口。
+
+---
+
+##### 重启
+
 接下来，你需要进行重启来启动已经安装好的系统，执行如下命令：
 
 ```bash
@@ -586,4 +613,10 @@ reboot
 
 虽然系统安装好了，但是还没有进行基本配置和安装图形界面，所以接下来我们要进行一些必须的配置和图形界面的安装。
 
-请见下一篇文章：[ArchLinux安装后的必须配置与图形界面安装教程](http://www.hustmeituan.club/archlinuxan-zhuang-hou-de-bi-xu-pei-zhi-yu-tu-xing-jie-mian-an-zhuang-jiao-cheng.html)。
+请见下一篇文章：[ArchLinux安装后的必须配置与图形界面安装教程](http://www.hustmeituan.club/archlinuxan-zhuang-hou-de-bi-xu-pei-zhi-yu-tu-xing-jie-mian-an-zhuang-jiao-cheng.html)
+
+## 特别感谢
+
+评论区中`Senrey_Song`、`YKun`对于本教程内容的指正。
+
+
