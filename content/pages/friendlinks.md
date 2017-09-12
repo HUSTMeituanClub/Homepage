@@ -27,9 +27,13 @@ cursor:pointer;
 }
 div.perpic:hover p{
 color:green;
+text-align: center;
+
 }
 div.perpic p {
 font-size: 15px;
+text-align: center;
+
 }
 div.perpic {
 padding:20px;
